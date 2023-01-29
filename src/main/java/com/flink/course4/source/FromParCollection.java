@@ -13,12 +13,18 @@ import org.apache.flink.util.NumberSequenceIterator;
  */
 public class FromParCollection {
     public static void main(String[] args) throws Exception {
+
+       Configuration configuration= new Configuration();
+       //设置web ui 的端口号
+       configuration.setInteger("rest.port",8081); //设置web ui的端口号
+
         StreamExecutionEnvironment env = StreamExecutionEnvironment.createLocalEnvironmentWithWebUI(new Configuration());
          //LongValueSequenceIterator是一个迭代器，
         // 它返回一个数字序列(如LongValue)。
         // 迭代器是splittable(由SplittableIterator定义，也就是说，它可以分为多个迭代器，每个迭代器返回数字序列的子序列。
         //SplittableIterator<OUT> iterator-->实现类是number,long
         DataStreamSource<Long> nums = env.fromParallelCollection(new NumberSequenceIterator(1l, 20l), long.class);
+        //底层调用的是addsource
         System.out.println("多并行度的数据"+nums.getParallelism());
         nums.print();
         env.execute("多并行度的数据");
