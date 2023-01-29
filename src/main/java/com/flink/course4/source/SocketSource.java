@@ -8,9 +8,8 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.util.Collector;
 
 /**
- * @description: socketsource
+ * @description: socketsource 创建的是datastream 无论是咋样并行度都是1
  * @author: 龙辉辉
- * @create: 2021-11-06 17:51
  */
 public class SocketSource {
     public static void main(String[] args) throws Exception {
