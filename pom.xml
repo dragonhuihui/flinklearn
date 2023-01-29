@@ -44,6 +44,7 @@
             <version>${flink.version}</version>
             <!--<scope>provided</scope>-->
         </dependency>
+
         <!-- hdfs运行 -->
         <dependency>
             <groupId>org.apache.hadoop</groupId>
@@ -86,10 +87,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba.ververica</groupId>
+            <groupId>com.ververica</groupId>
             <artifactId>flink-connector-mysql-cdc</artifactId>
-            <version>1.4.0</version>
-            <!--<scope>provided</scope>-->
+            <version>2.2.1</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.ververica</groupId>
@@ -216,12 +216,20 @@
             <artifactId>flink-connector-kafka_2.11</artifactId>
             <version>1.12.0</version>
         </dependency>
-
+        <!--本地web ui 依赖-->
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-runtime-web_2.11</artifactId>
             <version>${flink.version}</version>
         </dependency>
+        <!--flink-redis 依赖-->
+
+        <dependency>
+            <groupId>org.apache.bahir</groupId>
+            <artifactId>flink-connector-redis_2.11</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+
 
 
         <!--<dependency>-->

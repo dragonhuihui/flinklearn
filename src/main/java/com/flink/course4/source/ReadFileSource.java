@@ -12,7 +12,7 @@ public class ReadFileSource {
         String path="file:///Users/longhuihui/Desktop/flinklearn/data/input.txt";
         //FileProcessingMode.PROCESS_ONCE）当文件变化的时候，把发生变化的数据读入到flink系统中。
         //一旦文件发生变化，flink把变化的全部加入到flink系统中 FileProcessingMode.PROCESS_CONTINUOUSLY--全部读 --不是增量
-        //readFile(fileInputFormat, path) -根据指定的文件输入格式读取（一次）文件。
+        //readFile(fileInputFormat, path)-根据指定的文件输入格式读取（一次）文件。
         //readFile(fileInputFormat, path, watchType, interval, pathFilter, typeInfo)
         DataStreamSource<String> dataStreamSource = env.readFile(new TextInputFormat(null), path, FileProcessingMode.PROCESS_CONTINUOUSLY, 2000);
         dataStreamSource.print();

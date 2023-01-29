@@ -17,7 +17,7 @@ public class KakaSource {
         env.setParallelism(1);
         Properties properties = new Properties();
         properties.setProperty("bootstrap.servers", "dev0:9092");
-// 下面这些次要参数
+        // 下面这些次要参数
         properties.setProperty("group.id", "consumer-group");
         properties.setProperty("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         properties.setProperty("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
