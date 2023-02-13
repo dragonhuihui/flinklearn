@@ -23,38 +23,9 @@ public class MyParalleSource {
                 return value;
             }
         });
-//        SingleOutputStreamOperator<> filterDataStream =
-//                dataStream.filter(new FilterFunction<Long>() {
-//                    @Override
-//                    public boolean filter(Long number) throws Exception {
-//                        return number % 2 == 0;
-//                    }
-//                });
        dataStream.print().setParallelism(1);
         env.execute("并行");
     }
-    //这样的数据会产生4份，每个并行度都会产生一份。相当于4份，同一份数据--多个实例，
-    public static class MySource2 implements ParallelSourceFunction{
-
-        //每次来一条数据都会调用一次running方法
-        private long number = 1L;
-        private boolean isRunning = true;
-        @Override
-        public void run(SourceContext ctx) throws Exception {
-            while(isRunning){
-                ctx.collect(number);//输出
-                number++;
-            }
-            //每秒中生成一条数据
-            Thread.sleep(1000);
-        }
-
-        @Override
-        public void cancel() {
-            isRunning=false;
-        }
-    }
-
     public static  class  MySource4 extends RichParallelSourceFunction<String> {
         //1.调用mysource4的构造方法
         //2.调用open方法，调用一次

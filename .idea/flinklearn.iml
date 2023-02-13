@@ -255,6 +255,8 @@
     <orderEntry type="library" name="Maven: org.apache.flink:flink-shaded-jackson:2.12.1-13.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-csv:1.13.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-json:1.13.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.bahir:flink-connector-redis_2.11:1.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.75" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.flink:flink-streaming-java_2.12:1.14.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.flink:flink-core:1.14.0" level="project" />
   </component>
 </module>
