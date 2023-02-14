@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <flink.version>1.13.0</flink.version>
+        <flink.version>1.14.0</flink.version>
         <java.version>1.8</java.version>
         <scala.binary.version>2.12</scala.binary.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -72,13 +72,6 @@
             <artifactId>flink-clients_2.11</artifactId>
             <version>${flink.version}</version>
         </dependency>
-        <!-- kafka -->
-        <!--<dependency>-->
-        <!--<groupId>org.apache.flink</groupId>-->
-        <!--<artifactId>flink-connector-kafka_${scala.binary.version}</artifactId>-->
-        <!--<version>${flink.version}</version>-->
-        <!--</dependency>-->
-
         <!-- https://mvnrepository.com/artifact/org.rocksdb/rocksdbjni -->
         <dependency>
             <groupId>org.rocksdb</groupId>
@@ -150,12 +143,12 @@
 
         <!-- Add logging framework, to produce console output when running in the IDE. -->
         <!-- These dependencies are excluded from the application JAR by default. -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.7</version>
-            <scope>runtime</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.slf4j</groupId>-->
+<!--            <artifactId>slf4j-log4j12</artifactId>-->
+<!--            <version>1.7.7</version>-->
+<!--            <scope>runtime</scope>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>log4j</groupId>
@@ -213,9 +206,15 @@
         <!--flink-kafka-->
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-kafka_2.11</artifactId>
-            <version>1.12.0</version>
+            <artifactId>flink-connector-kafka_2.12</artifactId>
+            <version>1.14.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-base</artifactId>
+            <version>1.14.4</version>
+        </dependency>
+
         <!--本地web ui 依赖-->
         <dependency>
             <groupId>org.apache.flink</groupId>
@@ -228,6 +227,23 @@
             <groupId>org.apache.bahir</groupId>
             <artifactId>flink-connector-redis_2.11</artifactId>
             <version>1.1-SNAPSHOT</version>
+        </dependency>
+
+        <!-- flinkSql 解析json数据格式需要的依赖 -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-json</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>fastjson</artifactId>-->
+<!--            <version>2.0.14</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.75</version>
         </dependency>
 
 
